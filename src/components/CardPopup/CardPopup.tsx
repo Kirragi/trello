@@ -32,6 +32,7 @@ function CardPopup(props: CardPopupProps) {
   function onInputComent(e: React.FormEvent<HTMLInputElement>): void {
     setInputComent(e.currentTarget.value);
   }
+
   function onNewText(e: React.FormEvent<HTMLTextAreaElement>): void {
     setNewText(e.currentTarget.value);
   }
