@@ -43,6 +43,7 @@ function CardPopup(props: CardPopupProps) {
   function onValueComment(e: React.FormEvent<HTMLInputElement>): void {
     setValueComment(e.currentTarget.value);
   }
+
   const dataPopup = props.dataCards.find(
     (elem) => elem.id === props.popupCard[0].cardIndex,
   );
