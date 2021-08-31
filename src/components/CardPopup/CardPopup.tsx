@@ -39,6 +39,7 @@ function CardPopup(props: CardPopupProps) {
   function onNewTheme(e: React.FormEvent<HTMLInputElement>): void {
     setNewTheme(e.currentTarget.value);
   }
+
   function onValueComment(e: React.FormEvent<HTMLInputElement>): void {
     setValueComment(e.currentTarget.value);
   }
