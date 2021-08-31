@@ -32,18 +32,15 @@ function CardPopup(props: CardPopupProps) {
   function onInputComent(e: React.FormEvent<HTMLInputElement>): void {
     setInputComent(e.currentTarget.value);
   }
-
   function onNewText(e: React.FormEvent<HTMLTextAreaElement>): void {
     setNewText(e.currentTarget.value);
   }
   function onNewTheme(e: React.FormEvent<HTMLInputElement>): void {
     setNewTheme(e.currentTarget.value);
   }
-
   function onValueComment(e: React.FormEvent<HTMLInputElement>): void {
     setValueComment(e.currentTarget.value);
   }
-
   const dataPopup = props.dataCards.find(
     (elem) => elem.id === props.popupCard[0].cardIndex,
   );
@@ -111,7 +108,7 @@ function CardPopup(props: CardPopupProps) {
               onClick={() =>
                 switchsComment(itemComent.idComents, itemComent.coment)
               }>
-              <ImgText src={ChengeIcon} alt="chenge" />
+              <ImgText src={ChengeIcon} alt="" />
             </ButtonChenge>
           </div>
         );
@@ -138,7 +135,7 @@ function CardPopup(props: CardPopupProps) {
             <p>Автор: {itemComent.authorComents}</p>
             <ButtonTrash
               onClick={() => props.onDeleteCommets(itemComent.idComents)}>
-              <ImgTheme src={trashIcon} alt="trash" />
+              <ImgTheme src={trashIcon} alt="" />
             </ButtonTrash>
           </CommentHeader>
           {statusComment}
@@ -152,7 +149,7 @@ function CardPopup(props: CardPopupProps) {
       <ThemeWrapper>
         <ThemeText>{dataPopup?.theme}</ThemeText>
         <ButtonChenge onClick={() => switchTheme(dataPopup?.theme)}>
-          <ImgTheme src={ChengeIcon} alt="chenge" />
+          <ImgTheme src={ChengeIcon} alt="" />
         </ButtonChenge>
       </ThemeWrapper>
     );
@@ -179,7 +176,7 @@ function CardPopup(props: CardPopupProps) {
       <div>
         <span>{dataPopup?.text}</span>
         <ButtonChenge onClick={() => switchText(dataPopup?.text)}>
-          <ImgText src={ChengeIcon} alt="chenge" />
+          <ImgText src={ChengeIcon} alt="" />
         </ButtonChenge>
       </div>
     );
@@ -200,11 +197,13 @@ function CardPopup(props: CardPopupProps) {
   if (props.popupCard[0].status === true) {
     popup = (
       <WrapperPopup onClick={() => closePopup()}>
-        <ContentPopup onClick={(e) => e.stopPropagation()}>
+        <ContentPopup
+          className="card__popup__content"
+          onClick={(e) => e.stopPropagation()}>
           <HeaderPopup>
             <span>Колонка: {nameColumn}</span>
             <ButtonCross onClick={() => closePopup()}>
-              <ImgCross src={crossIcon} alt="cross" />
+              <ImgCross src={crossIcon} alt="" />
             </ButtonCross>
           </HeaderPopup>
           {statusTheme}
